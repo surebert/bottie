@@ -1,17 +1,14 @@
 # bottie
-##Simple BotKit bot with NLP
+##Simple XMPP/Jabber BotKit bot with NLP
 
-###*Original blog post avaliable on Andrew Templeton's blog:* 
+###*Original blog post avalaible on Andrew Templeton's blog:*
 
 http://blog.templeton.host/self-training-nlp-enabled-slack-bot-tutorial/
 
+This was re-written to work with XMPP.
 
 <br><br>
-##**Step 1** - Get Your Slack Bot Token
-
-- Go to Slack's Custom Integrations panel and click on the Bots link: https://my.slack.com/apps/build/custom-integration
-- Name your Bot and **COPY** the API Token value into your clipboard
-
+##**Step 1** - Get Your Jabber/XMPP Server Credentials
 
 <br><br>
 ##**Step 2** - Download the bottie code to your computer
@@ -19,7 +16,9 @@ http://blog.templeton.host/self-training-nlp-enabled-slack-bot-tutorial/
 If you're here on **GitHub**, you already know what to do. Navigate to the downloaded project folder *(on your computer)* and run the the following commands *[no dollar sign is required, used for reference only]*:
 
 - **RUN** - `$ npm install;`
-- **RUN** - `$ export SLACK_TOKEN='<COPIED_TOKEN from your Slack-Bot API>';`
+- **RUN** - `$ export XMPP_JID='my-username';`
+- **RUN** - `$ export XMPP_PASS='my-complex-password';`
+- **RUN** - `$ export XMPP_HOST='someserver.example.com';`
 - **RUN** - `$ node index`
 
 

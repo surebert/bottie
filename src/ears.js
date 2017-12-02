@@ -4,29 +4,27 @@ var BotKit = require('botkit');
 
 module.exports = Ears;
 
-var Bot = BotKit.slackbot({
+var Bot = BotKit.xmppbot({
   debug: false,
-  storage: undefined
+  storage: undefined,
+  account : {
+    jid:  process.env.XMPP_JID,
+    password: process.env.XMPP_PASS,
+    host: process.env.XMPP_HOST,
+    port : 5222
+  }
+
 });
 
 function Ears(token) {
   this.scopes = [
-    'direct_mention',
-    'direct_message',
-    'mention'
+    'message_received'
   ];
-  
-  // if we haven't defined a token, get the token from the session variable.
-  if (Bot.token == undefined) {
-    this.token = token;
-    }
+
 }
 
 Ears.prototype.listen = function() {
-  console.log('TOKEN: ' + this.token);
-  this.bot = Bot.spawn({
-    token: this.token
-  }).startRTM();
+  this.bot = Bot.spawn();
   return this;
 }
 
